@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model CallHistory {
+  id            String  @id @default(cuid())
+  agent         String  @db.VarChar(200)
+  uuid          String
+  duration      Int
+  recordingFile String?
+
+  @@index([agent])
+  @@map("call_histories")
+}
+
+model ImportHistory {
+  page     Int     @id
+  imported Boolean
+
+  @@map("import_histories")
+}

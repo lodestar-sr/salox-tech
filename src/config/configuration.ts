@@ -38,8 +38,8 @@ const config: Config = {
   },
   swagger: {
     enabled: get('SWAGGER_ENABLED').default('true').asBoolStrict(),
-    title: get('SWAGGER_TITLE').default('Book Store').asString(),
-    description: get('SWAGGER_DESCRIPTION').default('The Swagger API for Book Store').asString(),
+    title: get('SWAGGER_TITLE').default('Call Stats').asString(),
+    description: get('SWAGGER_DESCRIPTION').default('The Swagger API for Call Stats').asString(),
     version: get('SWAGGER_VERSION').default('1.0').asString(),
     path: get('SWAGGER_PATH').default('swagger').asString(),
   },
